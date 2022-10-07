@@ -6,7 +6,7 @@
 /*   By: hepiment <hepiment@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/28 17:53:56 by hepiment          #+#    #+#             */
-/*   Updated: 2022/10/07 18:09:41 by hepiment         ###   ########.fr       */
+/*   Updated: 2022/10/07 18:46:48 by hepiment         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -99,21 +99,15 @@ void	push_to_a(t_stack *stack_a, t_stack *stack_b)
 	else
 		rb(stack_b);
 }
-
-void	complex_sort(t_stack *stack_a, t_stack *stack_b)
+void	sort_100(t_stack *stack_a, t_stack *stack_b, int *sorted)
 {
-	int	*sorted;
 	int	pivot;
 	int	i;
 	int	x;
-
-	x = 0;
+	
 	i = stack_a->size;
-	sorted = sort_stack(stack_a);
-	if (stack_a->capacity < 100)
-		pivot = get_min(stack_a);
-	else if (stack_a->capacity == 100)
-		pivot = sorted[20];
+	x = 0;
+	pivot = sorted[20];
 	while (x < 5)
 	{	
 		while (i <= stack_a->size && i > 0)
@@ -129,101 +123,42 @@ void	complex_sort(t_stack *stack_a, t_stack *stack_b)
 		push_to_a(stack_a, stack_b);
 }
 
-// void	complex_sort(t_stack *stack_a, t_stack *stack_b)
-// {
-// 	int	max;
-// 	int	min;
-//
-// 	min = get_min(stack_a);
-// 	max = get_max(stack_a);
-// 	for (int x = stack_a->top; stack_a->data[x]; x--)
-// 		printf("Stack_A: %d		Stack_B: %d\n", stack_a->data[x], stack_b->data[x]);
-// 	while (!is_sorted(stack_a))
-// 	{
-// 		/* Manter o maior e o menor número na stack e ordenando a stack_a ao mesmo tempo. Caso o número do topo for maior do que o da base e menor que o seu anterior ele vai para baixo ordenando a stack_a */
-// 		if ((stack_a->data[stack_a->top] < stack_a->data[stack_a->top - 1] && stack_a->data[stack_a->top] > stack_a->data[0]) || stack_a->data[stack_a->top] == min || stack_a->data[stack_a->top] == max)
-// 		{
-// 	/* (Ex:)    Stack_A: 2              Stack_B: 0
-// 				Stack_A: 4              Stack_B: 0
-// 				Stack_A: 1              Stack_B: 0
-// 				Stack_A: 5              Stack_B: 0
-// 				Stack_A: 3              Stack_B: 0
-// 				Stack_A: 6              Stack_B: 0
-// 				Stack_A: 7              Stack_B: 0
-// 				Stack_A: 9              Stack_B: 0
-// 				Stack_A: 8              Stack_B: 0
-// 				pb
-// 				Moveu para a stack_b 2
-// 				pb
-// 				Moveu para a stack_b 4
-// 				Stack_A: 1
-// 				Stack_A: 5
-// 				Stack_A: 3
-// 				Stack_A: 6
-// 				Stack_A: 7
-// 				Stack_A: 9
-// 				Stack_A: 8
-// 				Rotacionou para baixo 1
-// 				ra
-// 				pb
-// 				Moveu para a stack_b 5
-// 				Stack_A: 3
-// 				Stack_A: 6
-// 				Stack_A: 7
-// 				Stack_A: 9
-// 				Stack_A: 8
-// 				Stack_A: 1
-// 				Rotacionou para baixo 3
-// 				ra
-// 				Stack_A: 6
-// 				Stack_A: 7
-// 				Stack_A: 9
-// 				Stack_A: 8
-// 				Stack_A: 1
-// 				Stack_A: 3
-// 				Rotacionou para baixo 6
-// 				ra
-// 				Stack_A: 7
-// 				Stack_A: 9
-// 				Stack_A: 8
-// 				Stack_A: 1
-// 				Stack_A: 3
-// 				Stack_A: 6
-// 				Rotacionou para baixo 7
-// 				ra
-// 				Stack_A: 9
-// 				Stack_A: 8
-// 				Stack_A: 1
-// 				Stack_A: 3
-// 				Stack_A: 6
-// 				Stack_A: 7
-// 				Rotacionou para baixo 9
-// 				ra
-// 				pb
-// 				Moveu para a stack_b 8
-// 				Stack_A: 1              Stack_B: 0
-// 				Stack_A: 3              Stack_B: 8
-// 				Stack_A: 6              Stack_B: 5
-// 				Stack_A: 7              Stack_B: 4
-// 				Stack_A: 9              Stack_B: 2 */
-// 			for (int x = stack_a->top; stack_a->data[x]; x--)
-// 				printf("Stack_A: %d\n", stack_a->data[x]);
-// 			printf("Moveu %d\n", stack_a->data[stack_a->top]);
-// 			ra(stack_a);
-// 		}
-// 		else
-// 		{
-// 			pb(stack_a, stack_b);
-// 			printf("Foi pra lá %d\n", stack_b->data[stack_b->top]);
-// 		}
-// 	}
-// 	while (stack_b->top >= 0)
-// 		return_to_a(stack_a, stack_b);
-// 	// while (!is_sorted(stack_a))
-// 	// 	moves_five(stack_a);
-// 	for (int x = stack_a->top; stack_a->data[x]; x--)
-// 		printf("Stack_A: %d		Stack_B: %d\n", stack_a->data[x], stack_b->data[x]);
-// }
+void	sort_500(t_stack *stack_a, t_stack *stack_b, int *sorted)
+{
+	int	x;
+	int	i;
+	int	pivot;
+
+	x = 0;
+	i = stack_a->size;
+	pivot = sorted[35];
+	while (x < 15)
+	{	
+		while (i <= stack_a->size && i > 0)
+		{
+			push_to_b(stack_a, stack_b, sorted, pivot);
+			i--;
+		}
+		i = stack_a->size;
+		pivot = pivot + 35;
+		x++;
+	}
+	while (stack_b->top > -1)
+		push_to_a(stack_a, stack_b);
+}
+
+void	complex_sort(t_stack *stack_a, t_stack *stack_b)
+{
+	int	*sorted;
+
+	sorted = sort_stack(stack_a);
+	if (stack_a->capacity < 500)
+		sort_100(stack_a, stack_b, sorted);
+	else if (stack_a->capacity >= 500)
+		sort_500(stack_a, stack_b, sorted);
+	free(sorted);
+}
+
 
 void	push_swap(t_stack *stack_a, t_stack *stack_b, int argc)
 {
