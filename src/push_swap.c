@@ -6,7 +6,7 @@
 /*   By: hepiment <hepiment@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/28 17:53:56 by hepiment          #+#    #+#             */
-/*   Updated: 2022/10/07 18:49:21 by hepiment         ###   ########.fr       */
+/*   Updated: 2022/10/07 19:18:14 by hepiment         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -98,6 +98,7 @@ void	push_to_a(t_stack *stack_a, t_stack *stack_b)
 	else
 		rb(stack_b);
 }
+
 void	sort_100(t_stack *stack_a, t_stack *stack_b, int *sorted)
 {
 	int	pivot;
@@ -107,7 +108,7 @@ void	sort_100(t_stack *stack_a, t_stack *stack_b, int *sorted)
 	i = stack_a->size;
 	x = 0;
 	pivot = sorted[20];
-	while (x < 5)
+	while (x < (stack_a->capacity / 20) + 1)
 	{	
 		while (i <= stack_a->size && i > 0)
 		{
@@ -131,7 +132,7 @@ void	sort_500(t_stack *stack_a, t_stack *stack_b, int *sorted)
 	x = 0;
 	i = stack_a->size;
 	pivot = sorted[35];
-	while (x < 15)
+	while (x < (stack_a->capacity / 35) + 1)
 	{	
 		while (i <= stack_a->size && i > 0)
 		{
