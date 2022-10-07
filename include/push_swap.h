@@ -6,7 +6,7 @@
 /*   By: hepiment <hepiment@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/22 17:41:42 by hepiment          #+#    #+#             */
-/*   Updated: 2022/10/07 12:25:50 by hepiment         ###   ########.fr       */
+/*   Updated: 2022/10/07 13:35:13 by hepiment         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ int			get_min(t_stack *stack_a);
 int			only_numbers(int argc, char **argv);
 int			duplicate(int argc, char **argv);
 int			amount_digits(char *argv);
-int			*sort_stack(int size, int *stack);
+int			*sort_stack(t_stack *stack);
 void		validate(t_stack *stack_a, int argc, char **argv);
 void		free_all(t_stack *stack);
 void		fill_stack(t_stack *stack_a, char **argv);

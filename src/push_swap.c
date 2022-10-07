@@ -6,7 +6,7 @@
 /*   By: hepiment <hepiment@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/28 17:53:56 by hepiment          #+#    #+#             */
-/*   Updated: 2022/10/07 12:48:04 by hepiment         ###   ########.fr       */
+/*   Updated: 2022/10/07 18:09:41 by hepiment         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,26 +65,19 @@ int	get_index(t_stack *stack, int data)
 	int	index;
 	
 	index = 0;
-	while (stack->data[index] != data)
+	while (stack->data[index] && stack->data[index] != data)
 		index++;
 	return (index);
 }
 
-void	push_to_b(t_stack *stack_a, t_stack *stack_b)
+void	push_to_b(t_stack *stack_a, t_stack *stack_b, int *sorted, int pivot)
 {
 	int	index;
 	int	proximity;
-	int	key_number;
 
-	
-	key_number = get_min(stack_a);
-	if (stack_a->capacity == 100)
-		key_number = get_min(stack_a);
-	else if (stack_a->capacity == 500)
-		key_number = get_min(stack_a);
-	index = get_index(stack_a, key_number);
+	index = get_index(stack_a, pivot);
 	proximity = stack_a->size / 2;
-	if (stack_a->data[stack_a->top] == stack_a->data[index])
+	if (stack_a->data[stack_a->top] <= pivot)
 		pb(stack_a, stack_b);
 	else if (proximity > index)
 		rra(stack_a);
@@ -92,16 +85,48 @@ void	push_to_b(t_stack *stack_a, t_stack *stack_b)
 		ra(stack_a);
 }
 
+void	push_to_a(t_stack *stack_a, t_stack *stack_b)
+{
+	int	index;
+	int	proximity;
+
+	index = get_index(stack_b, get_max(stack_b));
+	proximity = stack_b->size / 2;
+	if (stack_b->data[stack_b->top] == get_max(stack_b))
+		pa(stack_a, stack_b);
+	else if (proximity > index)
+		rrb(stack_b);
+	else
+		rb(stack_b);
+}
+
 void	complex_sort(t_stack *stack_a, t_stack *stack_b)
 {
-	// int	*sorted;
+	int	*sorted;
+	int	pivot;
+	int	i;
+	int	x;
 
-	// sorted = sort_stack(stack_a->size, stack_a->data);
-	while (!is_sorted(stack_a))
-		push_to_b(stack_a, stack_b);
+	x = 0;
+	i = stack_a->size;
+	sorted = sort_stack(stack_a);
+	if (stack_a->capacity < 100)
+		pivot = get_min(stack_a);
+	else if (stack_a->capacity == 100)
+		pivot = sorted[20];
+	while (x < 5)
+	{	
+		while (i <= stack_a->size && i > 0)
+		{
+			push_to_b(stack_a, stack_b, sorted, pivot);
+			i--;
+		}
+		i = stack_a->size;
+		pivot = pivot + 20;
+		x++;
+	}
 	while (stack_b->top > -1)
-		pa(stack_a, stack_b);
-	
+		push_to_a(stack_a, stack_b);
 }
 
 // void	complex_sort(t_stack *stack_a, t_stack *stack_b)

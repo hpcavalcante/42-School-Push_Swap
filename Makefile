@@ -6,7 +6,7 @@
 #    By: hepiment <hepiment@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/09/07 12:16:17 by hepiment          #+#    #+#              #
-#    Updated: 2022/10/07 12:39:04 by hepiment         ###   ########.fr        #
+#    Updated: 2022/10/07 13:18:27 by hepiment         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,7 @@ NAME = push_swap
 
 CC = gcc
 INCLUDE = -I ./include/
-CFLAGS = -g -Wall -Wextra -Werror
+CFLAGS = -g
 
 
 RM = rm -rf
