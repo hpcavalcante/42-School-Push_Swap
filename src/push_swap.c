@@ -6,7 +6,7 @@
 /*   By: hepiment <hepiment@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/28 17:53:56 by hepiment          #+#    #+#             */
-/*   Updated: 2022/10/07 18:46:48 by hepiment         ###   ########.fr       */
+/*   Updated: 2022/10/07 18:49:21 by hepiment         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,7 +59,6 @@ void	mid_sort(t_stack *stack_a, t_stack *stack_b)
 	pa(stack_a, stack_b);
 }
 
-
 int	get_index(t_stack *stack, int data)
 {
 	int	index;
@@ -70,7 +69,7 @@ int	get_index(t_stack *stack, int data)
 	return (index);
 }
 
-void	push_to_b(t_stack *stack_a, t_stack *stack_b, int *sorted, int pivot)
+void	push_to_b(t_stack *stack_a, t_stack *stack_b, int pivot)
 {
 	int	index;
 	int	proximity;
@@ -112,7 +111,7 @@ void	sort_100(t_stack *stack_a, t_stack *stack_b, int *sorted)
 	{	
 		while (i <= stack_a->size && i > 0)
 		{
-			push_to_b(stack_a, stack_b, sorted, pivot);
+			push_to_b(stack_a, stack_b, pivot);
 			i--;
 		}
 		i = stack_a->size;
@@ -136,7 +135,7 @@ void	sort_500(t_stack *stack_a, t_stack *stack_b, int *sorted)
 	{	
 		while (i <= stack_a->size && i > 0)
 		{
-			push_to_b(stack_a, stack_b, sorted, pivot);
+			push_to_b(stack_a, stack_b, pivot);
 			i--;
 		}
 		i = stack_a->size;

@@ -6,14 +6,13 @@
 /*   By: hepiment <hepiment@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/22 17:41:42 by hepiment          #+#    #+#             */
-/*   Updated: 2022/10/07 13:35:13 by hepiment         ###   ########.fr       */
+/*   Updated: 2022/10/07 19:01:38 by hepiment         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
 
-#include <stdio.h>
 #include <unistd.h>
 #include <stdlib.h>
 #include "../libft/libft.h"

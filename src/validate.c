@@ -6,7 +6,7 @@
 /*   By: hepiment <hepiment@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/30 20:34:13 by hepiment          #+#    #+#             */
-/*   Updated: 2022/10/07 12:46:50 by hepiment         ###   ########.fr       */
+/*   Updated: 2022/10/07 19:01:32 by hepiment         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,19 +15,20 @@
 int	only_numbers(int argc, char **argv)
 {
 	int		i;
-	char 	*arguments; 
+	int		j;
 	
 	i = 0;
+	j = 0;
 	while (i < argc)
 	{
-		arguments = argv[i];
-		if (*arguments == '-' || *arguments == '+')
-			arguments++;
-		while (*arguments)
+		j = 0;
+		if (argv[i][j] == '-' || argv[i][j]  == '+')
+			j++;
+		while (argv[i][j] )
 		{
-			if (*arguments < 48 || *arguments > 57)
+			if (argv[i][j]  < 48 || argv[i][j]  > 57)
 				return (1);
-			arguments++;
+			j++;
 		}
 		i++;
 	}
@@ -78,10 +79,8 @@ void	validate(t_stack *stack_a, int argc, char **argv)
 	i = 0;
 	while (i < argc)
 	{
-		if (only_numbers(argc - 1, argv + 1))
-		{	
+		if (only_numbers(argc, argv))
 			error(stack_a);
-		}
 		number = ft_atoi(argv[i]);
 		if ((number >= MAX_INT) || (number <= MIN_INT) || amount_digits(argv[i]) > 10)
 		{	
