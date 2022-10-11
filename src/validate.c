@@ -6,7 +6,7 @@
 /*   By: hepiment <hepiment@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/30 20:34:13 by hepiment          #+#    #+#             */
-/*   Updated: 2022/10/07 19:01:32 by hepiment         ###   ########.fr       */
+/*   Updated: 2022/10/11 15:47:33 by hepiment         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,17 +16,17 @@ int	only_numbers(int argc, char **argv)
 {
 	int		i;
 	int		j;
-	
+
 	i = 0;
 	j = 0;
 	while (i < argc)
 	{
 		j = 0;
-		if (argv[i][j] == '-' || argv[i][j]  == '+')
+		if (argv[i][j] == '-' || argv[i][j] == '+')
 			j++;
-		while (argv[i][j] )
+		while (argv[i][j])
 		{
-			if (argv[i][j]  < 48 || argv[i][j]  > 57)
+			if (argv[i][j] < 48 || argv[i][j] > 57)
 				return (1);
 			j++;
 		}
@@ -63,7 +63,7 @@ int	amount_digits(char *argv)
 	i = 0;
 	if (*argv == '-' || *argv == '+')
 		argv++;
-	while(*argv)
+	while (*argv)
 	{
 		i++;
 		argv++;
@@ -75,14 +75,15 @@ void	validate(t_stack *stack_a, int argc, char **argv)
 {
 	long int	number;
 	int			i;
-	
+
 	i = 0;
 	while (i < argc)
 	{
 		if (only_numbers(argc, argv))
 			error(stack_a);
 		number = ft_atoi(argv[i]);
-		if ((number >= MAX_INT) || (number <= MIN_INT) || amount_digits(argv[i]) > 10)
+		if ((number >= MAX_INT) || (number <= MIN_INT) || \
+		amount_digits(argv[i]) > 10)
 		{	
 			error(stack_a);
 		}

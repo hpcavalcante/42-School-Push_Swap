@@ -6,7 +6,7 @@
 /*   By: hepiment <hepiment@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/29 02:08:17 by hepiment          #+#    #+#             */
-/*   Updated: 2022/09/30 15:16:12 by hepiment         ###   ########.fr       */
+/*   Updated: 2022/10/11 15:45:21 by hepiment         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,14 @@
 
 int	get_max(t_stack *stack)
 {
-	int i;
+	int	i;
 	int	max;
 
 	i = stack->top;
 	max = stack->data[0];
-	while(i)
+	while (i)
 	{
-		if(max < stack->data[i])
+		if (max < stack->data[i])
 			max = stack->data[i];
 		i--;
 	}
@@ -30,17 +30,16 @@ int	get_max(t_stack *stack)
 
 int	get_min(t_stack *stack)
 {
-	int i;
+	int	i;
 	int	min;
 
 	i = stack->top;
 	min = stack->data[0];
-	while(i)
+	while (i)
 	{
-		if(min > stack->data[i])
+		if (min > stack->data[i])
 			min = stack->data[i];
 		i--;
 	}
 	return (min);
 }
-

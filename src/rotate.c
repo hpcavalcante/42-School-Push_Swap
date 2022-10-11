@@ -6,7 +6,7 @@
 /*   By: hepiment <hepiment@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/27 18:15:10 by hepiment          #+#    #+#             */
-/*   Updated: 2022/09/28 23:57:33 by hepiment         ###   ########.fr       */
+/*   Updated: 2022/10/11 15:44:15 by hepiment         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,7 +67,3 @@ void	rr(t_stack *stack_a, t_stack *stack_b)
 	stack_b->data[0] = temp;
 	write(1, "rr\n", 3);
 }
-
-
-
-

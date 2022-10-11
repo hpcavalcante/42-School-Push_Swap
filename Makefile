@@ -6,7 +6,7 @@
 #    By: hepiment <hepiment@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/09/07 12:16:17 by hepiment          #+#    #+#              #
-#    Updated: 2022/10/07 18:48:23 by hepiment         ###   ########.fr        #
+#    Updated: 2022/10/11 15:50:03 by hepiment         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -35,7 +35,8 @@ SRC =	$(PATH_SRC)swap.c \
 		$(PATH_SRC)error.c \
 		$(PATH_SRC)fill_stack.c \
 		$(PATH_SRC)validate.c \
-		$(PATH_SRC)create_stack.c
+		$(PATH_SRC)create_stack.c \
+		$(PATH_SRC)algo.c
 
 OBJS = $(patsubst $(PATH_SRC)%.c, $(PATH_OBJS)%.o, $(SRC))
 

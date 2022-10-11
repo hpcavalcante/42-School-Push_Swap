@@ -6,7 +6,7 @@
 /*   By: hepiment <hepiment@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/27 12:47:00 by hepiment          #+#    #+#             */
-/*   Updated: 2022/10/07 18:50:54 by hepiment         ###   ########.fr       */
+/*   Updated: 2022/10/11 15:47:57 by hepiment         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 int	main(int argc, char **argv)
 {
-	t_stack *stack_a;
-	t_stack *stack_b;
+	t_stack	*stack_a;
+	t_stack	*stack_b;
 
 	stack_a = NULL;
 	stack_b = NULL;

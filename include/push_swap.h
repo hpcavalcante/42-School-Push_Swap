@@ -6,28 +6,26 @@
 /*   By: hepiment <hepiment@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/22 17:41:42 by hepiment          #+#    #+#             */
-/*   Updated: 2022/10/07 19:01:38 by hepiment         ###   ########.fr       */
+/*   Updated: 2022/10/11 15:53:37 by hepiment         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
 
-#include <unistd.h>
-#include <stdlib.h>
-#include "../libft/libft.h"
+# include <unistd.h>
+# include <stdlib.h>
+# include "../libft/libft.h"
 
 # define MAX_INT 2147483647
 # define MIN_INT -2147483648
 
 typedef struct s_stack {
-	
 	int		*data;
-	int 	top;
+	int		top;
 	int		size;
 	int		capacity;
-
-} t_stack;
+}	t_stack;
 
 t_stack		*init_stack_a(t_stack *stack_a, int argc, char **argv);
 t_stack		*init_stack_b(t_stack *stack_b, int argc);
@@ -39,6 +37,11 @@ int			only_numbers(int argc, char **argv);
 int			duplicate(int argc, char **argv);
 int			amount_digits(char *argv);
 int			*sort_stack(t_stack *stack);
+int			get_index(t_stack *stack, int data);
+void		push_to_b(t_stack *stack_a, t_stack *stack_b, int pivot);
+void		push_to_a(t_stack *stack_a, t_stack *stack_b);
+void		sort_100(t_stack *stack_a, t_stack *stack_b, int *sorted);
+void		sort_500(t_stack *stack_a, t_stack *stack_b, int *sorted);
 void		validate(t_stack *stack_a, int argc, char **argv);
 void		free_all(t_stack *stack);
 void		fill_stack(t_stack *stack_a, char **argv);

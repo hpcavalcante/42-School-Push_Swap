@@ -6,7 +6,7 @@
 /*   By: hepiment <hepiment@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/30 17:28:18 by hepiment          #+#    #+#             */
-/*   Updated: 2022/10/07 18:02:42 by hepiment         ###   ########.fr       */
+/*   Updated: 2022/10/11 15:33:41 by hepiment         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 void	normalize_a(t_stack *stack_a)
 {
 	int	min;
-	int top;
+	int	top;
 
 	min = get_min(stack_a);
 	top = stack_a->top;
@@ -24,11 +24,8 @@ void	normalize_a(t_stack *stack_a)
 	while (top >= 0)
 	{
 		stack_a->data[top] += min + 1;
-		top--;		
+		top--;
 	}
-	// for (int x = stack_a->top; stack_a->data[x]; x--)
-	// 	printf("Stack A: %d\n", stack_a->data[x]);	
-	// exit(0);
 }
 
 void	fill_stack(t_stack *stack_a, char **argv)
